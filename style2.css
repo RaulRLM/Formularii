@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+section:not(.iconsdiv) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url('bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: animateBg 5s linear infinite;
+}
+
+@keyframes animateBg {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+ .login-box {
+    position:  relative;
+    width: 800px;
+    height: 650px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+
+ }
+
+ h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+ }
+
+ .input-box {
+    position: relative;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+    margin: 10px;
+ }
+
+ .input-box label {
+    position: absolute;
+    top: 65%;
+    left: 5px;
+    transform: translate(65%);
+    font-size: 0.7em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+ }
+ 
+ .input-box input:focus~label,
+ .input-box input:valid~label,
+ .input-box input:invalid~label {
+    top: 32px;
+    left: 140px;
+    font-size: 0.7em;
+ }
+
+
+ .input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+    border-radius: 15px;
+ }
+ .input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 32px;
+ }
+
+ .remember-forgot {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .remember-forgot label input {
+    margin-right: 3px;
+ }
+ .remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+ }
+ .remember-forgot a:hover {
+    text-decoration: underline;
+}
+button {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+}
+
+.register-link{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;   
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+  
+}
+.psw {
+   text-align: center;
+   
+}
+
+/* Centramos solo los radio buttons */
+
+.radio-buttons {
+    display: flex;
+    justify-content: center;
+}
+.radio-buttons input[type="radio"] {
+    margin-right: 10px; /* Ajusta el espacio entre los inputs de tipo radio */
+    margin-left: 10px; /* Ajusta el espacio entre los inputs de tipo radio */
+}
+
+/* Centramos via para eleguir un tipo de calle*/
+
+
+
+/* Estilo para el contenedor del select personalizado */
+.select-wrapper {
+    position: relative;
+    text-align: center; /* Centra el contenido horizontalmente */
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* Oculta el select nativo */
+/*.select-wrapper select {
+    display: none;
+}*/
+
+/* Estilo para el select personalizado */
+.select-wrapper .select-arrow {
+    position: relative;    
+}
+
+/* Estilo para las opciones del select personalizado */
+.select-wrapper ul {
+    position: absolute;
+    width: 100%;
+    padding: 5px 0;
+    list-style-type: none;
+    border-radius: 5px;
+    display: none;
+    border: 2px solid white;
+    background-color: black;
+    z-index: 2;
+}
+
+.select-wrapper ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Estilo para las opciones del select personalizado al pasar el ratón */
+.select-wrapper ul li:hover {
+    background-color: #716363; /* Color de fondo al pasar el ratón */
+}
+
+/* Muestra las opciones del select personalizado al hacer clic en el contenedor */
+.select-wrapper.active ul {
+    display: block;
+    max-height: 290px; /* Establece la altura máxima del menú desplegable */
+    overflow-y: auto; /* Activa el desplazamiento vertical cuando se supera la altura máxima */
+}
+#tipo_via {
+    display: none;
+}
+p {
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: centers;
+}
+.error {
+    top: 100px;
+    color: red;
+
+}
+.invalid-input {
+    color: red; /* Cambiar el color del texto a rojo cuando no se cumple el patrón */
+}
+h6{
+    text-align: right;
+}
+#inputFields2 {
+    display: none;
+}
+.iniciar {
+    text-decoration: none;
+}
+/**/
+
+
+
+
+
+.contenedor-select {
+    position: relative;
+    width: 100%;
+    text-align: center; /* Centra el contenido horizontalmente */
+    border-radius: 5px;
+}
+
+.contenedor-select .flecha-select {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black; /* Color de la flecha */
+    pointer-events: none; /* Evita que la flecha interfiera con el evento de clic */
+}
+
+.contenedor-select ul {
+    position: absolute;
+    width: 100%;
+    padding: 5px 0;
+    list-style-type: none;
+    border-radius: 5px;
+    display: none;
+    border: 2px solid white;
+    background-color: black; /* Color de fondo del menú desplegable */
+    z-index: 2;
+}
+
+.contenedor-select ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.contenedor-select ul li:hover {
+    background-color: #817272; /* Color de fondo al pasar el ratón */
+}
+
+.contenedor-select.active ul {
+    display: block;
+    max-height: 180px; /* Establece la altura máxima del menú desplegable */
+    overflow-y: auto; /* Activa el desplazamiento vertical cuando se supera la altura máxima */
+}
+
+#pais {
+    display: none; /* Oculta el select nativo */
+}
+
+/*boton atras*/
+#submitButton {
+    margin-top: -20px;
+    display: none;
+}
+
+#submitButton a {
+    color: black;
+    font-weight: bold;
+    
+    
+
+}
+
+.date-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#nom {
+    margin-left: 20px;
+}
+#nom2 {
+    margin-left: 85px;
+}
+#correuu {
+    margin-left: 10px;
+}
+#apodo {
+    margin-left: 107px;
+}
+.comprobarEmail {
+    margin-left: -15px;
+}
+#pass1 {
+    margin-left: 50px;
+}
+#pass2 {
+    margin-left: -60px;
+}
+
+#tercera {
+    display: none;
+}
+button {
+    margin: 15px 0px;
+}
+#searchInput {
+    background: transparent;
+    text-align: center;
+    border: 2px solid white;
+    margin-bottom: 5px;
+}
+
+#inputFields3 {
+    display: none;
+}
+
+#imagen {
+    display: block; /* Hacer que el error sea un elemento de bloque */
+    margin-top: 5px; /* Ajustar el margen superior para que aparezca en la siguiente línea */
+    margin-bottom: 30px;
+    color: red; /* Cambiar el color del texto del error si lo deseas */
+}
+#agradat {
+    margin-top: 30px;
+}
+
+.iconsdiv {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 18px;
+}
+
+.iconsdiv label {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.iconsdiv .icon {
+    font-size: 30px;
+    line-height: 30px;
+    transition: transform 0.3s; /* Agrega transform a la transición */
+    text-align: center; /* Centra el texto dentro del icono */
+}
+
+/*  ICONO  WATSHAP*/
+.iconsdiv input[type="radio"] {
+    display: none;
+}
+
+.iconsdiv input[type="radio"]:checked + .icon {
+    font-size: 40px; /* Tamaño más grande del icono cuando se selecciona */
+}
+
+/* OCULTA EL BOTON CON ID FIN DE FORMA PREDETERMINADA*/
+#fin{
+    display: none;
+}
+#index1 {
+    font-weight: bold;
+}
+#camposObligatorios {
+    text-align: center;
+}
+
+#nomvialabel {
+    margin-left: 40px;
+}
+#codiPostalLabel {
+    margin-left: 63px;
+}
+#localitatLabel{
+    margin-left: 88px;
+
+}
+
+#movil {
+    margin-left: 120px;
+}
+.satisfaction-input:checked + .icon {
+    font-size: 30px; /* Tamaño más grande del icono cuando el checkbox está seleccionado */
+}
+
+#pizatria {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+#rango{
+    border: none;
+    margin-top: -10px;
+}
