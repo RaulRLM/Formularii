@@ -308,6 +308,8 @@ inputFields2
         } 
         else {
         errorPoliticas.style.display = "block"; // Muestra el mensaje de error si la casilla no está marcada
+        checkSubmitButton3();
+
         }};
 
     ///////
