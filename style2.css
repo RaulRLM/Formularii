@@ -50,6 +50,7 @@ section:not(.iconsdiv) {
     width: 310px;
     border-bottom: 2px solid #fff;
     margin: 10px;
+    margin-left: 25px;
  }
 
  .input-box label {
@@ -89,18 +90,6 @@ section:not(.iconsdiv) {
     color: #fff;
     font-size: 1.2em;
     line-height: 32px;
- }
-
- .remember-forgot {
-    margin: -15px 0 15px;
-    font-size: .9em;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
- }
-
- .remember-forgot label input {
-    margin-right: 3px;
  }
  .remember-forgot a {
     color: #fff;
@@ -214,7 +203,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: centers;
+    text-align: center;
 }
 .error {
     top: 100px;
@@ -333,6 +322,7 @@ h6{
 
 #tercera {
     display: none;
+    margin-top: -20px;
 }
 button {
     margin: 15px 0px;
@@ -351,7 +341,7 @@ button {
 #imagen {
     display: block; /* Hacer que el error sea un elemento de bloque */
     margin-top: 5px; /* Ajustar el margen superior para que aparezca en la siguiente línea */
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     color: red; /* Cambiar el color del texto del error si lo deseas */
 }
 #agradat {
@@ -424,4 +414,39 @@ button {
 #rango{
     border: none;
     margin-top: -10px;
+}
+
+#frutasLabel {
+    margin-left: 25px;
+}
+#frutas {
+    margin-left: 20px;
+}select {
+    color: white; /* Cambia el color del texto a blanco */
+    background-color: black; /* Cambia el color de fondo del select */
+  }
+
+  #lenguajes {
+    margin: 20px;
+}
+#lenguajes label{
+    margin: 20px;
+}
+
+#notaForm {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 800;
+}
+#tipoCalle {
+    background-color: black;
+    border-radius: 8px;
+    margin-left: 5px;
+    text-align: center;
+}
+#tipolocalitat {
+    margin-bottom: 10px;
+}
+#labeltipolocalitat {
+    margin-left: 20px;
 }
