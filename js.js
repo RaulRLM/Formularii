@@ -188,7 +188,7 @@ inputFields2
     let fechaValida = validarFecha(document.getElementById('fechaInput').value);
     let apodoValido = validar("apodoInput", /^[a-zA-ZÀ-ÿñÑ\d]{1,15}\d{0,5}$/, "errorApodo");
 
-        if (nomValido && emailValido && email2Valido && sexoMarcado && emailInputValue === emailInput2Value && fechaValida.trim() == '' && apodoValido) {
+        if (nomValido && emailValido && email2Valido && sexoMarcado && emailInputValue === emailInput2Value && fechaValida.trim() == '' && apodoValido && valorSeleccionado) {
         document.getElementById("submitButton").style.display = "none";
         document.getElementById("inputFields").style.display = "none";
         document.getElementById("camposObligatorios").style.display = "none";
@@ -218,6 +218,19 @@ inputFields2
         });
     });
 
+     // Select
+const tipoCalleInput = document.getElementById("tipoCalle");
+
+// Inicializar la variable como false
+let valorSeleccionado2 = false;
+
+// Evento que se ejecuta al cambiar la selección en el datalist
+tipoCalleInput.addEventListener("input", () => {
+    // Verifica si se ha seleccionado algún valor
+    valorSeleccionado2 = (tipoCalleInput.value !== "");
+    checkSubmitButton2();
+});
+
     const checkSubmitButton2 = () => {
     let nomViaValidacio = validar("nomVia", /^[a-zA-ZÀ-ÿ\s']{3,}$/, "errorVia");
     let codiPostalValidacio = validar("codiPostal", /^[0-9]{5}$/, "errorcodiPostal");
@@ -225,7 +238,7 @@ inputFields2
     const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"][name="Llenguatge"]:checked');
 
 
-        if (nomViaValidacio && codiPostalValidacio && localitatValidació && checkedCheckboxes.length >=2 ) {
+        if (nomViaValidacio && codiPostalValidacio && localitatValidació && checkedCheckboxes.length >=2  && valorSeleccionado2) {
         document.getElementById("tercera").style.display = "block";
         }
         else {
@@ -242,7 +255,7 @@ inputFields2
     let localitatValidació = validar("localitatInput", /^[a-zA-ZÀ-ÿ\s']{3,}$/, "errorLocalitat");
     const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"][name="Llenguatge"]:checked');
 
-        if (nomViaValidacio && codiPostalValidacio && localitatValidació && checkedCheckboxes.length >=2) {
+        if (nomViaValidacio && codiPostalValidacio && localitatValidació && checkedCheckboxes.length >=2 && valorSeleccionado2) {
         document.getElementById("inputFields2").style.display = "none";
         document.getElementById("tercera").style.display = "none";
         document.getElementById("inputFields3").style.display = "block";
