@@ -87,20 +87,16 @@ inputFields2
             return "Nomes pots utilitzar ' / '";
             }
 
-        // Expresión regular para verificar si la fecha es mayor a 2024
+         // Expresión regular para verificar si la fecha es mayor a 2024
         const fechaIngresada = new Date(fecha);
-
-        // Expresión regular para verificar el formato de la fecha (DD/MM/AAAA)
-         const formatoValido = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/.test(fecha);
-            if (!formatoValido) {
-                return "Format DD/MM/AAAA.";
-            }
-
-        // Verificar si la fecha ingresada es mayor a la fecha actual
         const fechaActual = new Date();
-        if (fechaIngresada > fechaActual) {
-        return "¡¿Vens del futur?!";
-        }
+        const formatoValido = /^([0-2]?[0-9]|3[01])\/(0?[1-9]|1[0-2])\/(19|20)\d{2}$/.test(fecha);
+
+            if (!formatoValido || (formatoValido && fecha.substring(0, 2) === "00")) {
+                    return "Format (DD/MM/AAAA).";
+             } else if (fechaIngresada > fechaActual) {
+                    return "¡¿Vens del futur?!";
+             }
 
         const edad = fechaActual.getFullYear() - fechaIngresada.getFullYear();
         const mesActual = fechaActual.getMonth();
