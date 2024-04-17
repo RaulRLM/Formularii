@@ -109,9 +109,24 @@ inputFields2
             if (edad < 18) {
             return "Has de ser major d'edat.";
             }
+        // Obtenim el dia, mes i any de la data ingresada
+        const dia = parseInt(fecha.split("/")[0]);
+        const mes = parseInt(fecha.split("/")[1]);
+        const any = parseInt(fecha.split("/")[2]);
+                
+        const esBisiesto = (any % 4 === 0 && any % 100 !== 0) || any % 400 === 0;
+                
+        // Definir el número máximo de días permitidos para cada mes
+        const diesPerMes = [31, (esBisiesto && mes === 2) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                
+        if (dia > diesPerMes[mes - 1]) {
+            return "Aquest dia no existeix";
+     
+        } else {
 
-            return " "; // La fecha es válida y la edad es mayor o igual a 18 años
-            };
+            return " ";
+        }};
+
 
         // Evento para validar la fecha al escribir en el campo
         document.getElementById('fechaInput').addEventListener('input', (event) => {
@@ -496,22 +511,17 @@ tipoCalleInput.addEventListener("input", () => {
     // Agregar evento al campo de búsqueda para filtrar opciones
     document.getElementById('searchInput').addEventListener('input', filterOptions);
 
-
-
-
-
-
-    //borrar
-    const validarSelect = (selector, errorMessageId) => {
-    let select = document.getElementById(selector);
-    let message = document.getElementById(errorMessageId);
-    let selectedOption = select.options[select.selectedIndex];
-
-    if (selectedOption.value === "") {
-    message.textContent = "Selecciona una opción";
-    return false;
-    } else {
-    message.textContent = "";
-    return true;
-    }
-    };
+    document.addEventListener("DOMContentLoaded", function() {
+        // Obtener el formulario
+        const formulario = document.querySelector("form");
+    
+        // Agregar un manejador de eventos para el evento "keydown" en el formulario
+        formulario.addEventListener("keydown", function(event) {
+            // Verificar si la tecla presionada es "Enter"
+            if (event.key === "Enter") {
+                // Detener la acción predeterminada (enviar el formulario)
+                event.preventDefault();
+            }
+        });
+    });
+    
